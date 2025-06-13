@@ -6,7 +6,7 @@
 /*   By: jlima-so <jlima-so@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 08:39:16 by jlima-so          #+#    #+#             */
-/*   Updated: 2025/06/13 14:53:31 by jlima-so         ###   ########.fr       */
+/*   Updated: 2025/06/13 15:37:11 by jlima-so         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include "mlx_linux/mlx_int.h"
 #include "mlx_linux/mlx.h"
 #include "fractol.h"
+#include <limits.h>
 
 int encode_rgb(unsigned char red, unsigned char green, unsigned char blue)
 {
@@ -167,8 +168,8 @@ int main(int ac, char **av)
 	if (ac == 3)
 	{
 		data.ac = ac;
-		data.real = ft_atof (av[1]);
-		data.i = ft_atof (av[2]);
+		data.real = atof (av[1]);
+		data.i = atof (av[2]);
 	}
 	fflush(stdout);
 	data.mlx_ptr = mlx_init();
@@ -185,7 +186,7 @@ int main(int ac, char **av)
 	mlx_mouse_hook(data.win_ptr, mouse_input, &data);
 
 	// mlx_key_hook(data.win_ptr, keyboar_input, &data);
-	mlx_hook(data.win_ptr, ButtonPress, ButtonPressMask, keyboar_input, &data);
+	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, keyboar_input, &data);
 	
 	// mlx_loop_hook(data.mlx_ptr, loopers, &data);
 	

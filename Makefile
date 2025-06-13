@@ -6,7 +6,7 @@
 #    By: jlima-so <jlima-so@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/12 13:07:24 by jlima-so          #+#    #+#              #
-#    Updated: 2025/06/13 13:32:05 by jlima-so         ###   ########.fr        #
+#    Updated: 2025/06/13 15:24:15 by jlima-so         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,11 +70,11 @@ HD=
 
 all: ${PROJ}
 
-${MLBLIB}: ${MLB_OBJ}
-	cd my_libft && make
+${MLBLIB}:
+	cd mlx_linux && make
 
-${MLBMAC}: ${MLB_OBJ}
-	cd my_libft && make
+${MLBMAC}:
+	cd mlx_linux && make
 
 ${NAME}: ${OBJ_FILES}
 	${AR} ${NAME} $?
@@ -85,10 +85,10 @@ ${LIBFT}: ${OBJ_LIB}
 ${BONUS_ARQ}: ${OBJ_BONUS}
 	${AR} ${BONUS_ARQ} $?
 
-${PROJ}: ${NAME} ${LIBFT} ${PROJ}.c ${HDR_FILE}
+${PROJ}: ${NAME} ${LIBFT} ${PROJ}.c ${HDR_FILE} ${MLBLIB}
 	${CC} ${CFLAGS} ${PROJ}.c ${NAME} ${LIBFT} ${MLBLIB} ${MLX_LINUX_FLAGS} ${HD} -o ${PROJ}
 
-${PROJ_BONUS}: ${NAME} ${LIBFT} ${BONUS_ARQ} ${PROJ_BONUS}.c ${HDR_FILE}
+${PROJ_BONUS}: ${NAME} ${LIBFT} ${BONUS_ARQ} ${PROJ_BONUS}.c ${HDR_FILE} ${MLBLIB}
 	${CC} ${CFLAGS} ${PROJ_BONUS}.c ${BONUS_ARQ} ${NAME} ${LIBFT} ${MLBLIB} ${MLX_LINUX_FLAGS} ${HD} -o ${PROJ_BONUS}
 
 mac: ${NAME} ${LIBFT} ${PROJ}.c ${HDR_FILE}
