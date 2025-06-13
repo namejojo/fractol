@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"mlx_int.h": "c",
+		"mlx.h": "c",
+		"algorithm": "c",
+		"libft.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c"
+	}
+}
