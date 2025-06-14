@@ -6,7 +6,7 @@
 #    By: jlima-so <jlima-so@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/12 13:07:24 by jlima-so          #+#    #+#              #
-#    Updated: 2025/06/13 15:24:15 by jlima-so         ###   ########.fr        #
+#    Updated: 2025/06/14 12:22:32 by jlima-so         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,7 @@ clean:
 	rm -f ${OBJ_FILES} ${OBJ_BONUS} ${OBJ_LIB} bonus
 
 fclean: clean
-	rm -f ${NAME} ${LIBFT} ${PROJ} ${PROJ_BONUS}
+	rm -f ${NAME} ${LIBFT} ${PROJ} ${PROJ_BONUS} ${MLBMAC} ${MLBLIB}
 
 re: fclean all
 
